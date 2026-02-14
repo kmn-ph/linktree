@@ -1,0 +1,235 @@
+@keyframes apparition {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+:root {
+    /* --- THÈME CLAIR --- */
+    --bg-gradient: linear-gradient(135deg, #e4bdff 0%, #9B6BBD 100%);
+    --text-main: #000000;
+    /* Texte noir */
+    --card-bg: #9B6BBD;
+    /* Fond des boutons */
+    --card-hover: #AF82D1;
+    /* Fond boutons au survol */
+    --border-color: #000000;
+    /* Bordures noires */
+    --shadow-color: #000000;
+    /* Ombres noires */
+    --text-highlight: #4A2465;
+    /* Pour l'email */
+}
+
+/* --- THÈME SOMBRE --- */
+.dark-mode {
+    --bg-gradient: linear-gradient(135deg, #1a0b2e 0%, #0f0019 100%);
+    --text-main: #ffffff;
+    /* Texte blanc */
+    --card-bg: #2d1b3d;
+    /* Boutons violets foncés */
+    --card-hover: #4b2d66;
+    /* Boutons plus clairs au survol */
+    --border-color: #e4bdff;
+    /* Bordures claires pour ressortir */
+    --shadow-color: #000000;
+    /* Ombres restent noires */
+    --text-highlight: #e4bdff;
+    /* Email en clair */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: var(--bg-gradient);
+    background-attachment: fixed;
+    color: var(--text-main);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.link-item {
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+    gap: 15px;
+    border: 0.2em solid var(--border-color);
+    padding: 15px 30px;
+    width: 100%;
+    max-width: 400px;
+    background-color: var(--card-bg);
+    color: var(--text-main);
+    border-radius: 50px;
+    box-shadow: 10px 5px 0px var(--shadow-color);
+    margin-bottom: 15px;
+    transition: all 300ms ease-in-out;
+    animation: apparition 0.6s ease-out forwards;
+    opacity: 0;
+}
+
+.link-item:hover {
+    transform: scale(1.05);
+    background-color: var(--card-hover);
+    box-shadow: 15px 10px 0px var(--shadow-color);
+    cursor: pointer;
+}
+
+.link-txt,
+.logo {
+    background-color: transparent;
+    color: var(--text-main);
+}
+
+.link-txt {
+    font-family: 'Bebas Neue';
+    font-size: 2em;
+}
+
+body,
+header {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+main {
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.name {
+    font-family: 'Fjalla One', sans-serif;
+    font-size: 1.6em;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.description,
+#desc {
+    font-family: 'Manrope', sans-serif;
+    font-size: 0.8em;
+}
+
+.photo-profil {
+    border-radius: 100px;
+    border: 0.2em solid var(--border-color);
+    margin-bottom: 10px;
+    transition: all 300ms ease-in-out;
+    animation: apparition 0.6s ease-out forwards;
+    opacity: 0;
+    animation-delay: 0.1s;
+}
+
+.photo-profil:hover {
+    transform: scale(1.05);
+    box-shadow: 5px 5px 0px var(--shadow-color);
+    cursor: pointer;
+}
+
+.droit {
+    font-size: 0.6em;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.mail {
+    color: var(--text-highlight);
+    transition: all 300ms ease-in-out;
+}
+
+.mail:hover {
+    color: blueviolet;
+    cursor: pointer;
+}
+
+p {
+    text-align: center;
+}
+
+b {
+    color: var(--text-main);
+}
+
+a {
+    text-decoration: none;
+}
+
+.share-button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-color: var(--card-bg);
+    border: 2px solid var(--border-color);
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-main);
+    box-shadow: 4px 4px 0px var(--shadow-color);
+    z-index: 100;
+    transition: all 300ms ease-in-out;
+    animation: apparition 0.6s ease-out forwards;
+    opacity: 0;
+    animation-delay: 0.1s;
+}
+
+.share-button:hover {
+    transform: scale(1.1);
+    box-shadow: 6px 6px 0px var(--shadow-color);
+    background-color: var(--bg-gradient);
+}
+
+.theme-btn {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: var(--card-bg);
+    border: 2px solid var(--border-color);
+    box-shadow: 4px 4px 0px var(--shadow-color);
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: all 300ms ease;
+    z-index: 100;
+    animation: apparition 0.6s ease-out forwards;
+    opacity: 0;
+    animation-delay: 0.1s;
+}
+
+.theme-btn:hover {
+    transform: scale(1.1);
+}
+
+.link-item:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.link-item:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.link-item:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+.link-item:nth-child(4) {
+    animation-delay: 0.4s;
+}
